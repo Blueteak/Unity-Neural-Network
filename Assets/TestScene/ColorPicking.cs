@@ -9,7 +9,7 @@ public class ColorPicking : MonoBehaviour {
 	//Neural Network Variables
 	private const double MinimumError = 0.01;
 	private const TrainingType TrType = TrainingType.MinimumError;
-	private static NeuralNetwork.Network net;
+	private static NeuralNet net;
 	private static List<DataSet> dataSets; 
 
 	public Image I1;
@@ -26,7 +26,7 @@ public class ColorPicking : MonoBehaviour {
 	void Start () 
 	{
 		//Input - 3 (r,g,b) -- Output - 1 (Black/White)
-		net = new NeuralNetwork.Network(3, 4, 1);
+		net = new NeuralNet(3, 4, 1);
 		dataSets = new List<DataSet>();
 		Next();
 	}

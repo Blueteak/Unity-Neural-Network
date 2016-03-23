@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+
 namespace NeuralNetwork
 {
-
 	public class Neuron 
 	{
 		public List<Synapse> InputSynapses { get; set; }
@@ -18,7 +18,7 @@ namespace NeuralNetwork
 			{
 				InputSynapses = new List<Synapse>();
 				OutputSynapses = new List<Synapse>();
-				Bias = Network.GetRandom();
+				Bias = NeuralNet.GetRandom();
 			}
 
 			public Neuron(IEnumerable<Neuron> inputNeurons) : this()
@@ -76,7 +76,7 @@ namespace NeuralNetwork
 		{
 			InputNeuron = inputNeuron;
 			OutputNeuron = outputNeuron;
-			Weight = Network.GetRandom();
+			Weight = NeuralNet.GetRandom();
 		}
 	}
 

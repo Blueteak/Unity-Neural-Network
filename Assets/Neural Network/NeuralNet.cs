@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace NeuralNetwork
 {
-	public class Network
+	public class NeuralNet
 	{
 		public double LearnRate { get; set; }
 		public double Momentum { get; set; }
