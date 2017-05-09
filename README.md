@@ -1,4 +1,4 @@
-#Unity3D Neural Network
+# Unity3D Neural Network
 This is a C# implementation of a simple feedforward neural network.
 <br /><br />
 This neural network can be used to solve any problems where an input vector of values from 0-1 results in an output vector of values from 0-1.<br />
