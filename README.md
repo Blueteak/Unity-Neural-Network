@@ -33,7 +33,7 @@ double[] results = net.Compute(testInput);
 ```
 
 <br /><br />
-##Sample Scene
+## Sample Scene
 This project has a demo scene showing the power of the network by using it to determine which color text is easiest to read on randomly colored backgrounds.<br />
 ![Alt text](http://i.imgur.com/IBu2xU7.png)
 <br />
