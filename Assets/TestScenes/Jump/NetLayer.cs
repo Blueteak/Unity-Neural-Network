@@ -11,7 +11,7 @@ public class NetLayer : MonoBehaviour {
 	private const double MinimumError = 0.1;
 	private const TrainingType TrType = TrainingType.MinimumError;
 	private static NeuralNet net;
-	private static List<DataSet> dataSets; 
+	public static List<DataSet> dataSets; 
 	public static bool trained;
 
 	private int collectedDatasets = 0;

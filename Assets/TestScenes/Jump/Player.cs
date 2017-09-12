@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using NeuralNetwork;
 
 public class Player : MonoBehaviour {
 	public GameObject currentGroundTile;
-	public GameObject restartBtn; 
+	public GameObject restartText; 
 
 	//This is the distance between the player and the end of the current staying tile / platform
 	public double distanceInPercent;
@@ -63,12 +64,9 @@ public class Player : MonoBehaviour {
 	private void checkForGameOver(){
 		//The player is basically game over
 		if (transform.position.y < -24) {
-			restartBtn.SetActive (true); 
+			restartText.SetActive (true); 
+			Time.timeScale = 0; 
 		}
-	}
-
-	public void restart(){
-		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex); 
 	}
 
 	//Perform a jump
