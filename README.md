@@ -33,10 +33,14 @@ double[] results = net.Compute(testInput);
 ```
 
 <br /><br />
-## Sample Scene
+## Sample Scenes
+### Color picking
 This project has a demo scene showing the power of the network by using it to determine which color text is easiest to read on randomly colored backgrounds.<br />
 ![Alt text](http://i.imgur.com/IBu2xU7.png)
 <br />
 
 Users can select the color easiest to read, and after a few trials ( > 10 ) the Neural Network will show its pick for 'easiest to read color' for the given background.
 
+### Jump
+Here's another demo scene. Train the network by jumping from platform to platform (Use space). After some collected datasets the network will decide if the player has to jump or not. 
+![Image](http://i.imgur.com/r59hdx1.png)
