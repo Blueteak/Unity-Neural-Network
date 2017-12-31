@@ -20,18 +20,18 @@ namespace NeuralNetwork
 			LearnRate = learnRate ?? .4;
 			Momentum = momentum ?? .9;
 			InputLayer = new List<Neuron>();
-            HiddenLayers = new List<List<Neuron>>();
+			HiddenLayers = new List<List<Neuron>>();
 			OutputLayer = new List<Neuron>();
 
 			for (var i = 0; i < inputSize; i++)
 				InputLayer.Add(new Neuron());
 
-            for (int i = 0; i < numHiddenLayers; i++)
-            {
-                HiddenLayers.Add(new List<Neuron>());
-                for (var j = 0; j < hiddenSize; j++)
-                    HiddenLayers[i].Add(new Neuron(i==0?InputLayer:HiddenLayers[i-1]));
-            }
+		for (int i = 0; i < numHiddenLayers; i++)
+		{
+			HiddenLayers.Add(new List<Neuron>());
+			for (var j = 0; j < hiddenSize; j++)
+				HiddenLayers[i].Add(new Neuron(i==0?InputLayer:HiddenLayers[i-1]));
+		}
 
 			for (var i = 0; i < outputSize; i++)
 				OutputLayer.Add(new Neuron(HiddenLayers[numHiddenLayers-1]));
@@ -73,7 +73,7 @@ namespace NeuralNetwork
 			var i = 0;
 			InputLayer.ForEach(a => a.Value = inputs[i++]);
 			foreach (var layer in HiddenLayers)
-                layer.ForEach(a => a.CalculateValue());
+				layer.ForEach(a => a.CalculateValue());
 			OutputLayer.ForEach(a => a.CalculateValue());
 		}
 
@@ -81,14 +81,13 @@ namespace NeuralNetwork
 		{
 			var i = 0;
 			OutputLayer.ForEach(a => a.CalculateGradient(targets[i++]));
-            foreach(var layer in HiddenLayers.AsEnumerable<List<Neuron>>().Reverse() )
-            {
-                layer.ForEach(a => a.CalculateGradient());
-                layer.ForEach(a => a.UpdateWeights(LearnRate, Momentum));
-            }
+			foreach(var layer in HiddenLayers.AsEnumerable<List<Neuron>>().Reverse() )
+			{
+				layer.ForEach(a => a.CalculateGradient());
+				layer.ForEach(a => a.UpdateWeights(LearnRate, Momentum));
+			}
 			OutputLayer.ForEach(a => a.UpdateWeights(LearnRate, Momentum));
-            
-        }
+		}
 
 		public double[] Compute(params double[] inputs)
 		{
