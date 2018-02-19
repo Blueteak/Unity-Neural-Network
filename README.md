@@ -43,4 +43,4 @@ Users can select the color easiest to read, and after a few trials ( > 10 ) the 
 
 ### Jump
 Here's another demo scene. Train the network by jumping from platform to platform (Use space). After some collected datasets the network will decide if the player has to jump or not. 
-![Image](http://i.imgur.com/r59hdx1.png)
+![Image](https://i.imgur.com/1RbkmyW.png)
